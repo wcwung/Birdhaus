@@ -1,12 +1,13 @@
 {
-  "name": "electron-quick-start",
+  "name": "Birdhaus",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Minimal Electron wrapper for mobile Twitter",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/wcwung/Birdhaus",
   "keywords": [
     "Electron",
     "quick",
@@ -17,6 +18,7 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "~1.7.8"
+    "electron": "~1.7.8",
+    "electron-prebuilt-compile": "^1.8.2-beta.3"
   }
 }

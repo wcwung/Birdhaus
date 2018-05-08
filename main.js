@@ -1,7 +1,10 @@
 const electron = require('electron')
+const { shell } = electron;
+
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
+// enableLiveReload();
 const BrowserWindow = electron.BrowserWindow
 
 const path = require('path')
@@ -13,7 +16,13 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  mainWindow = new BrowserWindow({
+    width: 400,
+    height: 750,
+    titleBarStyle: 'hiddenInset',
+    backgroundColor: '#fff',
+    frame: false,
+  });
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
@@ -55,6 +64,17 @@ app.on('activate', function () {
     createWindow()
   }
 })
+
+app.on('web-contents-created', (e, contents) => {
+  // Check for a webview
+  if (contents.getType() == 'webview') {
+    // Listen for any new window events
+    contents.on('new-window', (e, url) => {
+      e.preventDefault();
+      shell.openExternal(url);
+    });
+  }
+});
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.

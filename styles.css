@@ -1,0 +1,27 @@
+body,
+html {
+  -webkit-app-region: drag;
+} 
+
+html { height: 100%; }
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+button,
+div {
+  -webkit-app-region: no-drag;
+}
+
+div > span {
+  cursor: text;
+}
+
+#webview-container {
+  margin-top: 35px;
+}
+
+#twitter-webview {
+  height: 95vh;
+}
