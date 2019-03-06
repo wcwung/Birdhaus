@@ -1,9 +1,11 @@
 body,
 html {
   -webkit-app-region: drag;
-} 
+}
 
-html { height: 100%; }
+html {
+  height: 100%;
+}
 body {
   height: 100vh;
   overflow: hidden;
@@ -19,7 +21,7 @@ div > span {
 }
 
 #webview-container {
-  margin-top: 35px;
+  margin-top: 45px;
 }
 
 #twitter-webview {
